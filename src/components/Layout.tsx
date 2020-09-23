@@ -1,46 +1,32 @@
 import Head from "next/head";
 import Navigation from "./Navigation";
+import Container from '@material-ui/core/Container';
+import {theme, cssVariables} from '../lib/theme';
+import Footer from "./Footer";
 
 type Props = {
   children: React.ReactNode;
+  isFullWidth: boolean;
+  bgColor: string;
 };
-export default function Layout({ children }: Props) {
+export default function Layout({ children, isFullWidth, bgColor }: Props) {
   return (
-    <div className="root">
+    <div>
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="apple-touch-icon" href="/icon.png" />
-        <meta name="theme-color" content="#fff" />
       </Head>
-      <nav>
-        <Navigation />
-      </nav>
-      <main>{children}</main>
-      <style jsx>
-        {`
-          .root {
-            display: block;
-            padding: 4rem 0;
-            box-sizing: border-box;
-            height: 100%;
-          }
-          main {
-            display: flex;
-            min-height: 100%;
-          }
-          @media (min-width: 769px) {
-            .root {
-              display: flex;
-              flex: 1 0 auto;
-            }
-            main {
-              flex: 1 0 auto;
-            }
-          }
-        `}
-      </style>
+      
+      <Navigation />
+
+      <Container maxWidth={isFullWidth ? false : 'lg'} 
+        style={bgColor ? {backgroundColor: bgColor,padding: 0} : {backgroundColor: cssVariables.color.contentbg,padding: 0}}>
+        {children}
+      </Container>
+
+      <Footer />
     </div>
   );
 }

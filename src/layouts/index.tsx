@@ -34,7 +34,7 @@ export default function Index({
   const authorName = getAuthor(author).name;
   return ({ children: content }) => {
     return (
-      <Layout>
+      <Layout isFullWidth={null} bgColor={null}>
         <BasicMeta
           url={`/posts/${slug}`}
           title={title}

@@ -21,7 +21,7 @@ export default function Index({ posts, tags, pagination }: Props) {
   const url = "/posts";
   const title = "All posts";
   return (
-    <Layout>
+    <Layout isFullWidth={null} bgColor={null}>
       <BasicMeta url={url} title={title} />
       <OpenGraphMeta url={url} title={title} />
       <TwitterCardMeta url={url} title={title} />
