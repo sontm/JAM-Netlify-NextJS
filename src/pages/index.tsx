@@ -125,7 +125,7 @@ export default function Index() {
                   <img src={"/images/qlx/2.svg"} alt="" style={{verticalAlign: "middle"}}/>
                 </div>
                 <Typography variant="h6" component="h4" gutterBottom>
-                Quản lí theo Cá Nhân hoặc Nhóm/Gia Đình
+                Quản lí theo Cá Nhân hoặc Nhóm/Gia Đình ...
                 </Typography>
             </div>
           </Grid>
